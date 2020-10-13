@@ -1,0 +1,52 @@
+---
+title: "No more typing"
+author: "Aaron Peikert"
+date: "10/13/2020"
+output: html_document
+---
+
+# Version Control
+
+1. Open https://rstudio.cloud
+2. Register / Login
+3. New Project ⯆ "New Project from GitHub Repository"
+4. Paste "www.github.com/aaronpeikert/ecr2020"
+
+# Dynamic Documents
+
+```{r}
+install.packages("git2r")
+git2r::checkout(branch = "02dynamic-documents")
+git2r::reset("origin/02dynamic-documents", "hard")
+```
+
+# External Dependencies
+
+```{r}
+install.packages("renv")
+library(renv)
+init(bare = TRUE)
+install.packages("ggplot2", "rmarkdown", "remotes", "Rcpp", "git2r")
+remotes::install_github("wlandau/targets")
+snapshot()
+```
+
+# Internal Dependencies
+
+```{r}
+git2r::checkout(branch = "03external-dependencies")
+git2r::reset("origin/03external-dependencies", "hard")
+```
+
+```{r}
+renv::restore()
+```
+
+```{r}
+targets::tar_make()
+```
+
+```{r}
+git2r::checkout(branch = "04internal-dependencies")
+git2r::reset("origin/04internal-dependencies", "hard")
+```
