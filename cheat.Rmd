@@ -17,7 +17,7 @@ output: html_document
 ```{r}
 install.packages("git2r")
 git2r::checkout(branch = "02dynamic-documents")
-git2r::reset("origin/02dynamic-documents", "hard")
+git2r::reset(git2r::revparse_single(".", "origin/02dynamic-documents"), "hard")
 ```
 
 # External Dependencies
@@ -35,7 +35,7 @@ snapshot()
 
 ```{r}
 git2r::checkout(branch = "03external-dependencies")
-git2r::reset("origin/03external-dependencies", "hard")
+git2r::reset(git2r::revparse_single(".", "origin/03external-dependencies"), "hard")
 ```
 
 ```{r}
@@ -48,5 +48,5 @@ targets::tar_make()
 
 ```{r}
 git2r::checkout(branch = "04internal-dependencies")
-git2r::reset("origin/04internal-dependencies", "hard")
+git2r::reset(git2r::revparse_single(".", "origin/04internal-dependencies"), "hard")
 ```
