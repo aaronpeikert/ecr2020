@@ -1,0 +1,23 @@
+---
+title: An example
+output: html_document
+---
+
+## Cleaning
+
+```{r clean}
+# remove polluters
+clean_cars <- subset(mtcars, mpg > 15)
+```
+
+## Analysis
+
+```{r mpg}
+summary(clean_cars$mpg)
+```
+
+## Including Plots
+
+```{r plot, echo=FALSE}
+with(clean_cars, plot(mpg, hp))
+```
