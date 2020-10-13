@@ -5,6 +5,10 @@ date: "10/13/2020"
 output: html_document
 ---
 
+```{r}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
 # Version Control
 
 1. Open https://rstudio.cloud
