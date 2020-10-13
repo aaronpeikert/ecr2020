@@ -3,6 +3,10 @@ title: An example
 output: html_document
 ---
 
+```{r setup, include=FALSE}
+library(ggplot2)
+```
+
 ## Cleaning
 
 ```{r clean}
@@ -21,3 +25,12 @@ summary(clean_cars$mpg)
 ```{r plot, echo=FALSE}
 with(clean_cars, plot(mpg, hp))
 ```
+
+## Fancy Plots
+
+```{r, echo=FALSE}
+ggplot(clean_cars, aes(mpg, hp)) +
+  geom_point() +
+  theme_minimal()
+```
+
