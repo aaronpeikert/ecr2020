@@ -1,0 +1,37 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\usepackage{tikz}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{header.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% title info
+
+\title{Why should you care about reproducibility?}
+\author{\href{https://github.com/aaronpeikert/}{Aaron Peikert}}
+\institute{Max Planck Institute of Human Development}
+\date{
+\scriptsize {\lolit Slides:} \href{https://github.com/aaronpeikert/12Monkeys}{\tt \scriptsize
+  \color{foreground} https://github.com/aaronpeikert/12Monkeys}
+}
+
+\begin{document}
+
+% title slide
+{
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+  \vfill \hfill \includegraphics[height=6mm]{Figs/cc-zero.png} \vspace*{-1cm}
+
+}}
+}
+
+\end{document}
