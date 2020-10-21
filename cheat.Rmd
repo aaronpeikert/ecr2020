@@ -18,10 +18,8 @@ knitr::opts_chunk$set(eval = FALSE)
 
 # Dynamic Documents
 
-```{r}
-install.packages("git2r")
-git2r::checkout(branch = "02dynamic-documents")
-git2r::reset(git2r::revparse_single(".", "origin/02dynamic-documents"), "hard")
+```{bash}
+git fetch --all && git reset --hard origin/02dynamic-documents
 ```
 
 # External Dependencies
@@ -35,12 +33,11 @@ remotes::install_github("wlandau/targets")
 snapshot()
 ```
 
-# Internal Dependencies
-
-```{r}
-git2r::checkout(branch = "03external-dependencies")
-git2r::reset(git2r::revparse_single(".", "origin/03external-dependencies"), "hard")
+```{bash}
+git fetch --all && git reset --hard origin/03external-dependencies
 ```
+
+# Internal Dependencies
 
 ```{r}
 renv::restore()
@@ -50,7 +47,6 @@ renv::restore()
 targets::tar_make()
 ```
 
-```{r}
-git2r::checkout(branch = "04internal-dependencies")
-git2r::reset(git2r::revparse_single(".", "origin/04internal-dependencies"), "hard")
+```{bash}
+git fetch --all && git reset --hard origin/04internal-dependencies
 ```
