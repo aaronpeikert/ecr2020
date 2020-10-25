@@ -34,4 +34,145 @@
 }}
 }
 
+\begin{frame}[c]{The Problem}
+
+\begin{centering}
+
+A normal data analysis (often):
+
+\begin{itemize}
+  \item does not run on other computers or for other people
+  \item breaks after some time
+\end{itemize}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}[c]{The Definition}
+
+\begin{centering}
+
+A reproducible analysis:
+
+\begin{itemize}
+  \item enables you to get the same results consistently
+  \item is understandable across humans and computers
+  \item is preserved over time.
+\end{itemize}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}[c]{The Solution}
+\Large
+\onslide<1>{Be \textcolor{hilit}{explicit} + use \textcolor{vhilit}{automation}\\}
+\onslide<2>{\textcolor{lolit}{Be explicit + use automation}\\}
+\Huge
+\onslide<2>{Practice.}
+\end{frame}
+
+\begin{frame}[c]
+\Huge
+Some motivation.
+\end{frame}
+
+\begin{frame}[c]{Philosophy of Science}
+
+\begin{centering}
+
+\onslide<1>{Empirical sciences = independently verifiable\\}
+\onslide<2>{data analytic code + independently verifiable\\ = \\}
+\onslide<2->{\textcolor{hilit}{reproducible}\\}
+\vspace{1cm}
+\onslide<3->{Sounds easy? Good science is never easy.}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}[c]{Productivity}
+
+\begin{centering}
+
+\onslide<1-2>{software engernierung + good tooling = more productive\\}
+\onslide<2>{researchers + good tooling = \textcolor{hilit}{more productive}\\}
+\onslide<3>{Upfront investments pay of in:
+  \begin{itemize}
+    \item collaboration
+    \item long running projects (>1 week)
+  \end{itemize}
+}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}[c]
+\Huge
+Some concepts.
+\end{frame}
+
+\begin{frame}[c, fragile]{Use Version Control}
+Git is intimidating, but its the best tool available.
+
+If you feel uncomfortable with Git use any automated solutions, like this R snippet (but seriously "use git"):
+
+<<archive, eval=FALSE>>=
+zip(
+  # working directory + date + zip = archive file
+  paste0(dirname(getwd()), "/",
+         Sys.Date(),
+         basename(getwd()),
+         ".zip"),
+  # archive all files in current directory
+  getwd()
+)
+@
+
+\end{frame}
+
+\begin{frame}[c]{Dynamic Document Generation}
+
+\centering{code + text = results\\}
+\vspace{5mm}
+
+Communicate with computers {\huge and} humans.
+
+Use RMarkdown even for Python or Julia or whatever (Jupyter ≠ version control).\\
+
+\end{frame}
+
+\begin{frame}[c]{Manage your (external) Depedencies}
+
+I love packages, I really do, but they will get you in trouble eventually. Use any of:
+
+\begin{itemize}
+\item Docker (any language)
+\item renv (R)
+\item virtual env (Python)
+\item Guix (even nerdier than Docker)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[c]{Manage your (internal) Depedencies}
+
+You only use the included toy data sets in R? Lay back and relax.\\
+Oh you work with real data. Use any of:
+
+\begin{itemize}
+\item Make (any language)
+\item drake/targets (R)
+\item doit (Python)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[c]
+\Huge
+\textcolor<2>{lolit}{Thank you} \onslide<2>for the feedback.
+\end{frame}
+
 \end{document}
