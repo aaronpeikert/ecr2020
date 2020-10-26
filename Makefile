@@ -10,7 +10,7 @@ $(STEM).pdf: $(STEM).tex header.tex Figs
 		xelatex $<
 
 $(STEM).tex: $(STEM).Rnw
-	R -e 'library(knitr);knit("$<")'
+	R -e "library(knitr);knit('$<')"
 
 $(STEM)_withnotes.pdf: $(STEM)_withnotes.tex header.tex Figs
 	xelatex $(STEM)_withnotes
