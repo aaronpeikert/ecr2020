@@ -138,9 +138,12 @@ zip(
 \centering{code + text = results\\}
 \vspace{5mm}
 
-Communicate with computers {\huge and} humans.
+Communicate with computers {\huge and} humans.\\
 
-Use RMarkdown even for Python or Julia or whatever (Jupyter ≠ version control).\\
+\vspace{5mm}
+
+
+\onslide<2>{Use RMarkdown even for Python or Julia or whatever (Jupyter ≠ version control).\\}
 
 \end{frame}
 
@@ -168,6 +171,18 @@ Oh you work with real data. Use any of:
 \item doit (Python)
 \end{itemize}
 
+\end{frame}
+
+\begin{frame}[c]{Topics to explore}
+  \begin{itemize}
+    \item sharing data
+    \item propriatary software
+    \item collaboration with supervisors or journals
+    \item licensing
+    \item inter language operability
+    \item Cloud / Cluster Computing
+    \item live code
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[c]
