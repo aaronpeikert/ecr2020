@@ -58,7 +58,7 @@ A reproducible analysis:
 \begin{itemize}
   \item enables you to get the same results consistently
   \item is understandable across humans and computers
-  \item is preserved over time.
+  \item is preserved over time
 \end{itemize}
 
 \end{centering}
@@ -98,7 +98,7 @@ Some motivation.
 
 \onslide<1-2>{software engineering + good tooling = more productive\\}
 \onslide<2>{researchers + good tooling = \textcolor{hilit}{more productive}\\}
-\onslide<3>{Upfront investments pay of in:
+\onslide<3>{Upfront investments pay off in:
   \begin{itemize}
     \item collaboration
     \item long running projects (>1 week)
@@ -115,7 +115,7 @@ Some concepts.
 \end{frame}
 
 \begin{frame}[c, fragile]{Use Version Control}
-Git is intimidating, but its the best tool available.
+Git is intimidating, but it's the best tool available.
 
 If you feel uncomfortable with Git use any automated solutions, like this R snippet (but seriously "use git"):
 
@@ -147,7 +147,7 @@ Communicate with computers {\huge and} humans.\\
 
 \end{frame}
 
-\begin{frame}[c]{Manage your (external) Depedencies}
+\begin{frame}[c]{Manage your (external) Dependencies}
 
 I love packages, I really do, but they will get you in trouble eventually. Use any of:
 
@@ -160,10 +160,10 @@ I love packages, I really do, but they will get you in trouble eventually. Use a
 
 \end{frame}
 
-\begin{frame}[c]{Manage your (internal) Depedencies}
+\begin{frame}[c]{Manage your (internal) Dependencies}
 
 You only use the included toy data sets in R? Lay back and relax.\\
-Oh you work with real data. Use any of:
+Oh, you work with real data. Use any of:
 
 \begin{itemize}
 \item Make (any language)
@@ -176,10 +176,10 @@ Oh you work with real data. Use any of:
 \begin{frame}[c]{Topics to explore}
   \begin{itemize}
     \item sharing data
-    \item propriatary software
+    \item proprietary software
     \item collaboration with supervisors or journals
     \item licensing
-    \item inter language operability
+    \item interlanguage operability
     \item Cloud / Cluster Computing
     \item live code
   \end{itemize}
