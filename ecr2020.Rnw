@@ -96,7 +96,7 @@ Some motivation.
 
 \begin{centering}
 
-\onslide<1-2>{software engernierung + good tooling = more productive\\}
+\onslide<1-2>{software engineering + good tooling = more productive\\}
 \onslide<2>{researchers + good tooling = \textcolor{hilit}{more productive}\\}
 \onslide<3>{Upfront investments pay of in:
   \begin{itemize}
