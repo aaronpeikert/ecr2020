@@ -16,8 +16,8 @@
 \author{\href{https://github.com/aaronpeikert/}{Aaron Peikert}}
 \institute{Max Planck Institute of Human Development}
 \date{
-\scriptsize {\lolit Slides:} \href{https://github.com/aaronpeikert/12Monkeys}{\tt \scriptsize
-  \color{foreground} https://github.com/aaronpeikert/12Monkeys}
+\scriptsize {\lolit Slides:} \href{https://github.com/aaronpeikert/ecr2020}{\tt \scriptsize
+  \color{foreground} https://github.com/aaronpeikert/ecr2020}
 }
 
 \begin{document}
@@ -67,8 +67,7 @@ A reproducible analysis:
 
 \begin{frame}[c]{The Solution}
 \Large
-\onslide<1>{Be \textcolor{hilit}{explicit} + use \textcolor{vhilit}{automation}\\}
-\onslide<2>{\textcolor{lolit}{Be explicit + use automation}\\}
+\textcolor<2>{lolit}{Be \textcolor<1>{hilit}{explicit} + use \textcolor<1>{vhilit}{automation}}\\
 \Huge
 \onslide<2>{Practice.}
 \end{frame}
@@ -76,6 +75,33 @@ A reproducible analysis:
 \begin{frame}[c]
 \Huge
 Some motivation.
+\end{frame}
+
+\begin{frame}[c, fragile]{Excellent Reproducibility}
+
+\begin{centering}
+
+An excellent reproducible analysis:
+
+\begin{itemize}
+  \item enables you to describe the reproduction in a tweet.
+\end{itemize}
+
+\end{centering}
+
+\footnotesize
+
+<<r, eval=FALSE>>=
+system(
+  "git clone https://github.com/aaronpeikert/ecr2020.git"
+  )
+setwd("./ecr2020")
+if(!requireNamespace("renv"))install.packages("renv")
+renv::restore()
+targets::tar_make()
+@
+
+
 \end{frame}
 
 \begin{frame}[c]{Philosophy of Science}
@@ -111,34 +137,28 @@ Some motivation.
 
 \begin{frame}[c]
 \Huge
-Some concepts.
+\only<1>{Some concepts.}
+\onslide<2->{\textcolor<3->{lolit}{Version Control}}\\
+\onslide<3->{\textcolor<4->{lolit}{Dynamic Document Generation}}\\
+\onslide<4->{\textcolor<5->{lolit}{Management of external Dependencies}}\\
+\onslide<5->{Management of internal Dependencies}
 \end{frame}
 
 \begin{frame}[c, fragile]{Use Version Control}
-Git is intimidating, but it's the best tool available.
 
-If you feel uncomfortable with Git use any automated solutions, like this R snippet (but seriously "use git"):
-
-<<archive, eval=FALSE>>=
-zip(
-  # working directory + date + zip = archive file
-  paste0(dirname(getwd()), "/",
-         Sys.Date(),
-         basename(getwd()),
-         ".zip"),
-  # archive all files in current directory
-  getwd()
-)
-@
+\textcolor<2>{hilit}{Keep track of your changes.}\\
+Git is intimidating, but it's the best tool available.\\
+If you feel uncomfortable with Git use any automated solutions.
 
 \end{frame}
 
 \begin{frame}[c]{Dynamic Document Generation}
 
-\centering{code + text = results\\}
+\textcolor<2>{hilit}{Communicate with computers {\Large and} humans.}\\
+
 \vspace{5mm}
 
-Communicate with computers {\huge and} humans.\\
+\centering{code + text = results\\}
 
 \vspace{5mm}
 
@@ -149,7 +169,11 @@ Communicate with computers {\huge and} humans.\\
 
 \begin{frame}[c]{Manage your (external) Dependencies}
 
-I love packages, I really do, but they will get you in trouble eventually. Use any of:
+\textcolor<2>{hilit}{Note what software your analysis needs.}\\
+
+I love packages, I really do, but they will get you in trouble eventually.
+
+\onslide<2>{Use any of:
 
 \begin{itemize}
 \item Docker (any language)
@@ -157,19 +181,94 @@ I love packages, I really do, but they will get you in trouble eventually. Use a
 \item virtual env (Python)
 \item Guix (even nerdier than Docker)
 \end{itemize}
-
+}
 \end{frame}
 
 \begin{frame}[c]{Manage your (internal) Dependencies}
 
+\textcolor<2>{hilit}{Describe how to reproduce your results, step by step.}
+
 You only use the included toy data sets in R? Lay back and relax.\\
-Oh, you work with real data. Use any of:
+Oh, you work with real data.
+
+\onslide<2>{Use any of:
 
 \begin{itemize}
 \item Make (any language)
 \item drake/targets (R)
 \item doit (Python)
 \end{itemize}
+}
+\end{frame}
+
+\begin{frame}[c]{Version Control}
+
+{\large Do you have time to learn Git?}
+\begin{table}[]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{cc}
+\textcolor{hilit}{Yes.} & \textcolor{vhilit}{No.}                    \\
+\textcolor{hilit}{Git}  & \textcolor{vhilit}{Any automated backups.}
+\end{tabular}%
+}
+\end{table}
+\end{frame}
+
+
+\begin{frame}[c]{Dynamic Document Generation}
+
+{\large Can you avoid Word?}
+\begin{table}[]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{cc}
+\textcolor{hilit}{Yes.} & \textcolor{vhilit}{No.}                    \\
+\textcolor{hilit}{RMarkdown}  & \textcolor{vhilit}{OfficeR/redoc}
+\end{tabular}%
+}
+\end{table}
+
+\end{frame}
+
+\begin{frame}[c]{External Dependency Management}
+
+{\large
+\textcolor<2>{lolit}{Do you use more languages than R?\\}
+\onslide<2>{Do you want to reproduce for decades?}
+}
+\begin{table}[]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{cc}
+\textcolor{hilit}{Yes.} & \textcolor{vhilit}{No.}                    \\
+\textcolor{hilit}{Docker}  & \textcolor{vhilit}{renv}
+\end{tabular}%
+}
+\end{table}
+
+\end{frame}
+
+\begin{frame}[c]{Internal Dependency Management}
+
+{\large Do you use more languages than R?}
+\begin{table}[]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{cc}
+\textcolor{hilit}{Yes.} & \textcolor{vhilit}{No.}                    \\
+\textcolor{hilit}{Make}  & \textcolor{vhilit}{targets}
+\end{tabular}%
+}
+\end{table}
+
+\end{frame}
+
+\begin{frame}[c]{Self Promotion}
+\textcolor<2>{lolit}{Did you answer yes to these five questions?}\\
+\onslide<2>{Check out my paper:\\ \href{https://doi.org/10.31234/osf.io/8xzqy}{A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker.}\\
+and\\
+\href{https://github.com/aaronpeikert/repro}{the repro package}.}
 
 \end{frame}
 
