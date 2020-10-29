@@ -27,3 +27,15 @@ The answer to "How do I reproduce this?" should fit into a tweet.
 Asking yourself too often if the results for the manuscript are up to date will drive you crazy.
 `targets` will help us to keep our sh*t together.
 Anyone venturing beyond the limits of R, using Python, Julia or Matlab might want to look into Make (left as an exercise to the reader). [Affiliate Link](https://psyarxiv.com/8xzqy/).
+
+# I hate typing
+
+Copy: https://github.com/aaronpeikert/ecr2020
+
+Visit: https://rstudio.cloud
+
+Copy:
+
+```
+install.packages(c("ggplot2", "rmarkdown", "remotes", "visNetwork", "Rcpp", "git2r"))
+```
