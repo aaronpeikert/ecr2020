@@ -37,5 +37,5 @@ Visit: https://rstudio.cloud
 Copy:
 
 ```
-install.packages(c("ggplot2", "rmarkdown", "remotes", "visNetwork", "Rcpp", "git2r"))
+install.packages(c("ggplot2", "rmarkdown", "renv", "remotes", "visNetwork", "Rcpp", "git2r"))
 ```
